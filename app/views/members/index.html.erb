@@ -1,0 +1,29 @@
+<h1>Listing members</h1>
+
+<table>
+  <tr>
+    <th>First name</th>
+    <th>Bio</th>
+    <th>Birthday</th>
+    <th>Parelli level</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @members.each do |member| %>
+  <tr>
+    <td><%= member.first_name %></td>
+    <td><%= member.bio %></td>
+    <td><%= member.birthday %></td>
+    <td><%= member.parelli_level %></td>
+    <td><%= link_to 'Show', member %></td>
+    <td><%= link_to 'Edit', edit_member_path(member) %></td>
+    <td><%= link_to 'Destroy', member, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Member', new_member_path %>

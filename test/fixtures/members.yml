@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  first_name: MyString
+  bio: MyText
+  birthday: 2011-01-12
+  parelli_level: 1
+
+two:
+  first_name: MyString
+  bio: MyText
+  birthday: 2011-01-12
+  parelli_level: 1
