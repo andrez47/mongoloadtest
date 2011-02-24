@@ -29,6 +29,7 @@ GEM
       activesupport (= 3.0.3)
     activesupport (3.0.3)
     arel (2.0.6)
+    bitgain-mockdata (0.0.3)
     bson (1.1.5)
     bson_ext (1.1.5)
     builder (2.1.2)
@@ -79,6 +80,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bitgain-mockdata (= 0.0.3)
   bson_ext
   mongoid (= 2.0.0.rc.3)
   rails (= 3.0.3)

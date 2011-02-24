@@ -5,28 +5,30 @@
   <%= @post.body %>
 </p>
 <p>
-  <b>Member:</b>
-  <%= @post.writer.first_name %>
+  <b>Writer:</b>
+  <%= @post.writer.first_name %> <%= @post.writer.last_name %>
 </p>
 <p>
-  <b>Member:</b>
-  <%= @post.member_recipient.first_name %>
+  <b>Member recipient:</b>
+  <%= @post.member_recipient.first_name %> <%= @post.member_recipient.last_name %>
 </p>
 <p>
-  <b>Horse:</b>
+  <b>Horse partner:</b>
+  <% if @post.horse_partner != nil %>
   <%= @post.horse_partner.name %>
+  <% end %>
 </p>
 <p>
-  <b>Horse:</b>
+  <b>Horse recipient:</b>
   <%= @post.horse_recipient.name %>
 </p>
 
 <% if @post.comments.size > 0 %>
   <h2>Comments</h2>
   <% for comment in @post.comments %>
-    <p><%= comment.body %>
+    <p><i><%= comment.body %></i>
     <% if comment.writer != nil %>
-    by member: <%= comment.writer.first_name %>
+    by member: <%= comment.writer.first_name %> <%= comment.writer.last_name %>
     <% end %>
     </p>
   <% end %>
@@ -36,7 +38,7 @@
 <%= form_for [@post, Comment.new] do |f| %>
   <p><%= f.text_area :body, :rows => 10 %></p>
   <div class="field">
-    <%= f.label :writer_id %><br />
+    Comment <%= f.label :writer_id %><br />
     <%= f.collection_select :writer_id, Member.all, :id, :first_name %>
   </div>
   <p><%= f.submit %></p>
