@@ -1,4 +1,7 @@
-<h1>Listing horses (<%= @horses.count %>)</h1>
+<h1>Listing horses</h1>
+
+<%= page_entries_info @horses %>
+<br /><br />
 
 <table>
   <tr>
@@ -23,7 +26,8 @@
   </tr>
 <% end %>
 </table>
-
+<br />
+<%= will_paginate @horses %>
 <br />
 
 <%= link_to 'New Horse', new_horse_path %>

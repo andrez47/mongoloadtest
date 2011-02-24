@@ -31,6 +31,6 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 # end
 
 gem 'mongoid', '2.0.0.rc.3'
-#gem 'mongoid', :git => 'git@github.com:durran/mongoid.git'
 gem 'bson_ext'
 gem 'bitgain-mockdata', '0.0.3'
+gem 'will_paginate'

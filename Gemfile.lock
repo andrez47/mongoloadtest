@@ -85,3 +85,4 @@ DEPENDENCIES
   mongoid (= 2.0.0.rc.3)
   rails (= 3.0.3)
   sqlite3-ruby
+  will_paginate

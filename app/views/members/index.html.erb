@@ -1,4 +1,7 @@
-<h1>Listing members (<%= @members.count %>)</h1>
+<h1>Listing members</h1>
+
+<%= page_entries_info @members %>
+<br /><br />
 
 <table>
   <tr>
@@ -23,7 +26,8 @@
   </tr>
 <% end %>
 </table>
-
+<br />
+<%= will_paginate @members %>
 <br />
 
 <%= link_to 'New Member', new_member_path %>

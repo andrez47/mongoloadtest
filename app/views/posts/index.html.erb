@@ -1,4 +1,7 @@
-<h1>Listing posts (<%= @posts.count %>)</h1>
+<h1>Listing posts</h1>
+
+<%= page_entries_info @posts %>
+<br /><br />
 
 <table>
   <tr>
@@ -19,7 +22,8 @@
   </tr>
 <% end %>
 </table>
-
+<br />
+<%= will_paginate @posts %>
 <br />
 
 <%= link_to 'New Post', new_post_path %>

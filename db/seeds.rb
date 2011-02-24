@@ -23,7 +23,7 @@ p "Creating Horses...\n"
 3.times {
   Horse.create(:name => Bitgain::Mockdata::Names.project_name, :bio => Bitgain::Mockdata::Words.three, \
     :parelli_level => Bitgain::Mockdata::Numbers.random_between(1..10), :birthday => "Sat Dec 11 18:00:00 1991", \
-    :age => 20, :owner => Member.all[Bitgain::Mockdata::Numbers.random_between(1..memberCount)]
+    :age => 20, :owner => Member.all[Bitgain::Mockdata::Numbers.random_between(0..memberCount)]
   )
 }
 horseCount = Horse.count - 1
@@ -32,16 +32,16 @@ horseCount = Horse.count - 1
 p "Creating Posts...\n"
 3.times {
   post = Post.create(:body => Bitgain::Mockdata::Words.some(5..15), \
-    :writer => Member.all[Bitgain::Mockdata::Numbers.random_between(1..memberCount)], \
-    :member_recipient => Member.all[Bitgain::Mockdata::Numbers.random_between(1..memberCount)], \
-    :horse_partner => Horse.all[Bitgain::Mockdata::Numbers.random_between(1..horseCount)], \
-    :horse_recipient => Horse.all[Bitgain::Mockdata::Numbers.random_between(1..horseCount)]
+    :writer => Member.all[Bitgain::Mockdata::Numbers.random_between(0..memberCount)], \
+    :member_recipient => Member.all[Bitgain::Mockdata::Numbers.random_between(0..memberCount)], \
+    :horse_partner => Horse.all[Bitgain::Mockdata::Numbers.random_between(0..horseCount)], \
+    :horse_recipient => Horse.all[Bitgain::Mockdata::Numbers.random_between(0..horseCount)]
   )
   # create 1..15 comments
   ran = Bitgain::Mockdata::Numbers.random_between(1..15)
   ran.times {
     post.comments << Comment.new(:body => Bitgain::Mockdata::Words.some(5..15), \
-      :writer => Member.all[Bitgain::Mockdata::Numbers.random_between(1..memberCount)]
+      :writer => Member.all[Bitgain::Mockdata::Numbers.random_between(0..memberCount)]
     )
   }
 }
