@@ -8,7 +8,7 @@
 
 # create 30.000 members
 p "Creating Members...\n"
-2000.times {
+28000.times {
   Member.create(:first_name => Bitgain::Mockdata::Names.first_name, \
     :last_name => Bitgain::Mockdata::Names.last_name, :bio => Bitgain::Mockdata::Words.three, \
     :email => Bitgain::Mockdata::Words.one, :parelli_level => Bitgain::Mockdata::Numbers.random_between(1..10), \
