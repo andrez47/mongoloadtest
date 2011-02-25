@@ -10,9 +10,9 @@ class Member
   field :birthday, :type => Date
   field :parelli_level, :type => Integer
 
-  references_many :horses
-  references_many :posts
-  references_many :comments
+  references_many :horses, :validate => false
+  references_many :posts, :validate => false
+  references_many :comments, :validate => false
   index :parelli_level
   index([
     [ :first_name, Mongo::ASCENDING ], [ :last_name, Mongo::ASCENDING ]
