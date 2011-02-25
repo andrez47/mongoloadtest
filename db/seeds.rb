@@ -21,7 +21,7 @@ memberCount = Member.count - 1
 
 # create 15.000 horses
 p "Creating Horses..."
-10000.times {
+0.times {
   Horse.create(:name => Bitgain::Mockdata::Names.project_name, :bio => Bitgain::Mockdata::Words.three, \
     :parelli_level => Bitgain::Mockdata::Numbers.random_between(1..10), :birthday => "Sat Dec 11 18:00:00 1991", \
     :age => 20, :owner => members[Bitgain::Mockdata::Numbers.random_between(0..memberCount)]
@@ -32,7 +32,7 @@ horseCount = Horse.count - 1
 
 # create 200.000 posts
 p "Creating Posts..."
-0.times {
+200000.times {
   post = Post.create(:body => Bitgain::Mockdata::Words.some(5..15), \
     :writer => members[Bitgain::Mockdata::Numbers.random_between(0..memberCount)], \
     :member_recipient => members[Bitgain::Mockdata::Numbers.random_between(0..memberCount)], \
