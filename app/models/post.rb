@@ -1,10 +1,10 @@
 class Post
   include Mongoid::Document
   include Mongoid::Timestamps
-  
+
   field :body, :type => String
-  
-  embeds_many :comments
+
+  embeds_many :comments, :validate => false
   #referenced_in :member, :index => true
   referenced_in :writer, :class_name => "Member", :inverse_of => :writer, :foreign_key => 'writer_id', :index => true
   referenced_in :member_recipient, :class_name => "Member", :inverse_of => :member_recipient, :foreign_key => 'member_recipient_id', :index => true
