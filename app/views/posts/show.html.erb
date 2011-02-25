@@ -37,10 +37,7 @@
 <h2>New Comment</h2>
 <%= form_for [@post, Comment.new] do |f| %>
   <p><%= f.text_area :body, :rows => 10 %></p>
-  <div class="field">
-    Comment <%= f.label :writer_id %><br />
-    <%= f.collection_select :writer_id, Member.all, :id, :first_name %>
-  </div>
+
   <p><%= f.submit %></p>
 <% end %>
 
