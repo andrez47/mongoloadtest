@@ -1,5 +1,13 @@
 <h1>Listing members</h1>
 
+<strong>Selected Member</strong>
+
+<br />
+Name: <%= @member.first_name %> <%= @member.last_name %>
+<br />
+City: <%= @member.city %>
+<br /><br />
+
 <%= page_entries_info @members %>
 <br /><br />
 
@@ -9,6 +17,7 @@
     <th>Bio</th>
     <th>Birthday</th>
     <th>Parelli level</th>
+    <th>City</th>
     <th></th>
     <th></th>
     <th></th>
@@ -21,6 +30,7 @@
     <td><%= member.bio %></td>
     <td><%= member.birthday %></td>
     <td><%= member.parelli_level %></td>
+    <td><%= member.city %></td>
     <td><%= member.location[0] %> , <%= member.location[1] %></td>
     <td><%= link_to 'Show', member %></td>
     <td><%= link_to 'Edit', edit_member_path(member) %></td>

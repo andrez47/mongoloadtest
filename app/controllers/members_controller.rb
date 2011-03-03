@@ -2,7 +2,11 @@ class MembersController < ApplicationController
   # GET /members
   # GET /members.xml
   def index
-    @members = Member.paginate(:per_page => 100, :page => params[:page])
+    #@selectedMember = Member.all[0];
+    #@selectMembers = Member.all.limit(20)
+    @member = Member.all[Bitgain::Mockdata::Numbers.random_between(0..Member.all.count-1)]
+    @members = Member.where(:location.near => [@member.location[0], @member.location[1]]).paginate(:per_page => 50, :page => params[:page])
+    #@members = Member.paginate(:per_page => 100, :page => params[:page])
 
     respond_to do |format|
       format.html # index.html.erb
