@@ -36,7 +36,7 @@ City: <%= @member.city %>
       <% end %>
     </td>
     <td>
-      <% if member.location != nil %>
+      <% if member.location[0] != nil %>
       <%= member.location[0] %> , <%= member.location[1] %>
       <% end %>
     </td>
