@@ -16,8 +16,8 @@ p "Creating Members..."
   )
 
 }
-members = Member.all
-#members = Member.find(:all, :conditions => {:city => nil})
+#members = Member.all
+members = Member.find(:all, :conditions => {:city => nil})
 memberCount = Member.count - 1
 
 # update Member
