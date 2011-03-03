@@ -20,6 +20,16 @@
   <%= @member.parelli_level %>
 </p>
 
+<p>
+  <b>Parelli city:</b>
+  <%= @member.city %>
+</p>
+
+<p>
+  <b>Parelli location:</b>
+  x: <%= @member.location[0] %> y: <%= @member.location[1] %>
+</p>
+
 
 <%= link_to 'Edit', edit_member_path(@member) %> |
 <%= link_to 'Back', members_path %>

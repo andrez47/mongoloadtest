@@ -17,7 +17,18 @@ p "Creating Members..."
 
 }
 members = Member.all
+#members = Member.find(:all, :conditions => {:city => nil})
 memberCount = Member.count - 1
+
+# update Member
+p "Creating Locations... #{members.count}"
+
+members.count.times { | x |
+  location = Bitgain::Mockdata::Locations.pick
+  member = members[x]
+  #p "Member #{x} #{member.first_name}"
+  member.update_attributes(:city => location[0], :location => [location[1].to_f, location[2].to_f])
+}
 
 # create 15.000 horses
 p "Creating Horses..."
@@ -32,7 +43,7 @@ horseCount = Horse.count - 1
 
 # create 200.000 posts
 p "Creating Posts..."
-200000.times {
+0.times {
   post = Post.create(:body => Bitgain::Mockdata::Words.some(5..15), \
     :writer => members[Bitgain::Mockdata::Numbers.random_between(0..memberCount)], \
     :member_recipient => members[Bitgain::Mockdata::Numbers.random_between(0..memberCount)], \

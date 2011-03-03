@@ -27,7 +27,10 @@
     <%= f.label :age %><br />
     <%= f.text_field :age %>
   </div>
-
+  <div class="field">
+    <%= f.label :owner_id %><br />
+    <%= f.collection_select :owner_id, Member.all, :id, :first_name %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

@@ -9,6 +9,8 @@ class Member
   field :password_hash, :type => String
   field :birthday, :type => Date
   field :parelli_level, :type => Integer
+  field :city, :type => String
+  field :location, :type => Array
 
   references_many :horses, :validate => false
   references_many :posts, :validate => false
@@ -20,4 +22,5 @@ class Member
   index([
     [ :email, Mongo::ASCENDING ], [ :password_hash, Mongo::ASCENDING ]
   ])
+  index [[ :location, Mongo::GEO2D ]], :min => -180, :max => 180
 end
