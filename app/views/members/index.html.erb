@@ -1,12 +1,11 @@
 <h1>Listing members</h1>
 
-<strong>Selected Member</strong>
-
+<%= form_tag(members_path, :method => "get") do %>
+City: <%= select_tag :location, options_for_select(@location_options, @location) %>
+Distance: <%= select_tag :distance, options_for_select(@distance_options, @distance) %>
+<%= submit_tag("Search") %>
+<% end %>
 <br />
-Name: <%= @member.first_name %> <%= @member.last_name %>
-<br />
-City: <%= @member.city %>
-<br /><br />
 
 <%= page_entries_info @members %>
 <br /><br />
